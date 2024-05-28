@@ -3,11 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anonymous Message</title>
+  <title>send whimsy a tipsie 'nimy</title>
   <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <style>
+    /* Add the CSS for the popup window here */
+    .popup-container {
+      position: fixed;
+      bottom: 20px;
+      left: 55px;
+      width: 50px;
+      height: 10px;
+      padding: 10px;
+      /* background-color: #ffffff; */
+      /* border: 1px solid #000000;
+      border-radius: 5px; */
+      /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .popup-content input {
+      margin-right: 0;
+      /* margin-top: 10px; */
+      padding: 8px;
+      padding-right: 0;
+    }
+
+    .popup-content button {
+      display: flex;
+      margin-right: 0;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      left: 115px;
+    }
+  </style>
 </head>
 <body>
+  <div class="popup-container" id="popupContainer">
+    <div class="popup-content">
+      <button onclick="checkPassword()">Submit</button>
+      <input type="password" id="passwordInput" placeholder="secret code...">
+    </div>
+  </div>
+
   <div class="container">
     <h1>Send Fio an Anonymous Message</h1>
     <form id="messageForm">
@@ -16,5 +58,18 @@
     </form>
     <p id="response"></p>
   </div>
+
+  <script>
+    function checkPassword() {
+      var password = document.getElementById('passwordInput').value;
+      // You can add your password validation logic here
+      if (password === 'melissabarrera') {
+        // Redirect to another page
+        window.location.href = "see_messages.html";
+      } else {
+        alert('nuh-uh');
+      }
+    }
+  </script>
 </body>
 </html>
